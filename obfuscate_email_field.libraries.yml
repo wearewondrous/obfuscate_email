@@ -1,0 +1,6 @@
+base-js:
+  version: VERSION
+  js:
+    js/email-obfuscator.js: {}
+  dependencies:
+    - core/jquery

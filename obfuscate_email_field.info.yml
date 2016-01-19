@@ -1,0 +1,7 @@
+name: Obfuscate Email Field
+type: module
+description: Twig Template to obfuscate a field_email
+core: 8.x
+package: Wondrous
+dependencies:
+  - rot13
