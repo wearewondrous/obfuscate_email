@@ -2,7 +2,7 @@
 
 ## Source
 
-GitHub: https://www.github.com/WondrousLLC/email_obfuscate_field
+GitHub: https://www.github.com/WondrousLLC/obfuscate_email_field
 
 ## What Is This?
 
