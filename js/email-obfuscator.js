@@ -1,9 +1,9 @@
-jQuery(function ($) {
+(function () {
   'use strict';
 
-  var $mailItems = $('a[data-mail-to]');
+  var elements = document.querySelectorAll('a[data-mail-to]');
 
-  if (!$mailItems.length) {
+  if (!elements) {
     return;
   }
 
@@ -16,19 +16,20 @@ jQuery(function ($) {
     });
   };
 
-  $mailItems.each(function() {
-    var $this = $(this);
-    var href = $this.data('mail-to').rot13();
+  NodeList.prototype.forEach = Array.prototype.forEach;
+
+  elements.forEach(function(element) {
+    var href = element.getAttribute('data-mail-to').rot13();
+    var replaceInner = !!element.getAttribute('data-replace-inner');
 
     href = href.replace(/\/dot\//g, '.');
     href = href.replace(/\/at\//g, '@');
 
-    $this
-      .attr('href', 'mailto:' + href)
-      .removeAttr('data-mail-to');
+    element.setAttribute('href', 'mailto:' + href);
+    element.removeAttribute('data-mail-to');
 
-    if ($this.data('replace-inner') !== undefined) {
-      $this.html(href);
+    if (replaceInner) {
+      element.innerHTML = href;
     }
   });
-});
+})();
