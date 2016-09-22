@@ -35,7 +35,7 @@
     });
   }
 
-  Drupal.behaviors.stripeColorField = {
+  Drupal.behaviors.obfuscateEmailField = {
     attach: init
   };
 })(jQuery, Drupal);
