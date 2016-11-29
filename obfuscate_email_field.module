@@ -41,5 +41,5 @@ function obfuscate_email_field_theme() {
  * Implements hook_page_attachments_alter().
  */
 function obfuscate_email_field_page_attachments_alter(&$page) {
-  $page['#attached']['library'][] = 'obfuscate_email_field/base-js';
+  $page['#attached']['library'][] = 'obfuscate_email_field/default';
 }

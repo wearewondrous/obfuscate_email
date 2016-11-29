@@ -1,5 +1,5 @@
 {
-  "name": "wondrousllc/obfuscate_email_field",
+  "name": "drupal/obfuscate_email_field",
   "type": "drupal-module",
   "description": "Obfuscate Emails",
   "keywords": ["Drupal"],

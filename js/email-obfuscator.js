@@ -1,4 +1,4 @@
-(function ($, Drupal) {
+(function (Drupal) {
   'use strict';
 
   function init(context) {
@@ -38,4 +38,4 @@
   Drupal.behaviors.obfuscateEmailField = {
     attach: init
   };
-})(jQuery, Drupal);
+})(Drupal);
