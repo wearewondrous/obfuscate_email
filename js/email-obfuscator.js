@@ -8,19 +8,19 @@
       return;
     }
 
-    // + Jonas Raoni Soares Silva
+    // Rewrite from Jonas Raoni Soares Silva
     // @ http://jsfromhell.com/string/rot13 [rev. #1]
 
-    String.prototype.rot13 = function () {
-      return this.replace(/[a-zA-Z]/g, function (c) {
+    function rot13(string) {
+      return string.replace(/[a-zA-Z]/g, function (c) {
         return String.fromCharCode((c <= 'Z' ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26);
       });
-    };
+    }
 
     NodeList.prototype.forEach = Array.prototype.forEach;
 
     elements.forEach(function (element) {
-      var href = element.getAttribute('data-mail-to').rot13();
+      var href = rot13(element.getAttribute('data-mail-to'));
       var replaceInner = !!element.getAttribute('data-replace-inner');
 
       href = href.replace(/\/dot\//g, '.');
