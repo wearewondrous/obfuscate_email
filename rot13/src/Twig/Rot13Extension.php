@@ -1,16 +1,9 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\rot13\Twig\Rot13Extension.
- *
- * This provides a Twig extension that registers various Drupal specific
- * extensions to Twig.
- *
- * @see \Drupal\Core\CoreServiceProvider
- */
-
 namespace Drupal\rot13\Twig;
+
+use Twig_Extension;
+use Twig_SimpleFilter;
 
 /**
  * A class providing Drupal Twig extensions.
@@ -19,20 +12,19 @@ namespace Drupal\rot13\Twig;
  *
  * @see \Drupal\Core\CoreServiceProvider
  */
-
-class Rot13Extension extends \Twig_Extension {
+class Rot13Extension extends Twig_Extension {
 
   /**
    * {@inheritdoc}
    */
   public function getFilters() {
     return array(
-        new \Twig_SimpleFilter('rot13', 'str_rot13'),
+        new Twig_SimpleFilter('rot13', 'str_rot13'),
     );
   }
 
-  public function getName()
-  {
+  public function getName() {
     return 'rot13_twig_extension';
   }
+
 }

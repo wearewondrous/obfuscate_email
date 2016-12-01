@@ -27,11 +27,11 @@ function obfuscate_email_field_help($route_name, RouteMatchInterface $route_matc
  * Implements hook_theme().
  */
 function obfuscate_email_field_theme() {
-  $theme =  [
+  $theme = [
     'field__email' => [
       'base hook' => 'field',
       'template' => 'field--email',
-    ]
+    ],
   ];
 
   return $theme;
