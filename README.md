@@ -13,7 +13,7 @@ vanilla JS in the client. No jQuery needed. The
 consists of three parts:
 
 - hide behind a data-attribute
-- substitute the @-sign and dots (.) with /at/, /dot/, then
+- substitute the @-sign and dots (.) with `/at/`, `/dot/`, then
 - shift everything via [rot13](https://en.wikipedia.org/wiki/ROT13)
 - rebuild it via javascript
 
