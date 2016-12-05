@@ -29,7 +29,7 @@ inside the twig template.
 ```
 <a data-mail-to="znvy/ng/znvy/qbg/pbz">Email</a>
 <a data-mail-to="znvy/ng/znvy/qbg/pbz" data-replace-inner="">Email</a>
-<span data-mail-to="znvy/ng/znvy/qbg/pbz" data-replace-inner="@mail">send me an @mail</a>
+<span data-mail-to="znvy/ng/znvy/qbg/pbz" data-replace-inner="@mail">drop me a line at @mail</span>
 ```
 
 will be converted to
@@ -37,5 +37,5 @@ will be converted to
 ```
 <a href="mailto:mail@mail.com">Email</a>
 <a href="mailto:mail@mail.com">mail@mail.com</a>
-<span>send me an mail@mail.com</a>
+<span>drop me a line at mail@mail.com</span>
 ```
