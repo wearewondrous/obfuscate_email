@@ -54,6 +54,8 @@ set title_classes = [
   ]
 %}
 
+{{ attach_library('obfuscate_email_field/default') }}
+
 <div{{ attributes.addClass(classes) }}>
   {% if not label_hidden %}
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
@@ -61,12 +63,18 @@ set title_classes = [
   <div{{ content_attributes.addClass('field__items') }}>
     {% for item in items %}
       {% if item.content['#title'] %}
-        {# only render, when email anchor link #}
         {% set mail_string = item.content['#title']|replace({'.': '/dot/', '@': '/at/'})|rot13() %}
+        {# render when email anchor link #}
         <a href="#" data-mail-to="{{ mail_string }}" target="_blank" data-replace-inner="">
           {% trans %}Email{% endtrans %}
         </a>
+      {% elseif item.content['#context'].value %}
+        {# render when plain text #}
+        {% set mail_string = item.content['#context'].value|replace({'.': '/dot/', '@': '/at/'})|rot13() %}
+        <span data-mail-to="{{ mail_string }}" data-replace-inner="@email">@email</span>
       {% else %}
+        {# fallback content output #}
+        {# should not happen #}
         {{ item.content }}
       {% endif %}
     {% endfor %}
