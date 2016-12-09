@@ -2,3 +2,5 @@ default:
   version: VERSION
   js:
     js/email-obfuscator.js: {}
+  dependencies:
+    - core/drupal
