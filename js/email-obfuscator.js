@@ -47,7 +47,7 @@
       element.removeAttribute('data-replace-inner');
 
       // set href if anchor tag
-      if (element.tagName == 'a') {
+      if (element.tagName === 'A') {
         element.setAttribute('href', 'mailto:' + mailTo);
       }
 
