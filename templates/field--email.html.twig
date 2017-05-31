@@ -37,8 +37,7 @@
  */
 #}
 {% set field_name_class = field_name|clean_class %}
-{%
-set classes = [
+{% set classes = [
     'field',
     'field--' ~ entity_type|clean_class ~ '--' ~ field_name_class,
     'field--name-' ~ field_name_class,
@@ -47,14 +46,13 @@ set classes = [
     label_display == 'inline' ? 'clearfix',
   ]
 %}
-{%
-set title_classes = [
+{% set title_classes = [
     'field__label',
     label_display == 'visually_hidden' ? 'visually-hidden',
   ]
 %}
 
-{{ attach_library('obfuscate_email_field/default') }}
+{{ attach_library('obfuscate_email/default') }}
 
 <div{{ attributes.addClass(classes) }}>
   {% if not label_hidden %}

@@ -16,7 +16,7 @@ function obfuscate_email_field_help($route_name, RouteMatchInterface $route_matc
     case 'help.page.obfuscate_email_field':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Twig Template to obfuscate a field_email') . '</p>';
+      $output .= '<p>' . t('Twig Template to obfuscate a <code>field_email</code> code.') . '</p>';
       return $output;
 
     default:

@@ -1,8 +1,8 @@
-# Email Obfuscate Field for Drupal 8
+# Obfuscate Email for Drupal 8
 
 ## Source
 
-GitHub: https://www.github.com/WondrousLLC/obfuscate_email_field
+GitHub: https://www.github.com/WondrousLLC/obfuscate_email
 
 ## What Is This?
 
