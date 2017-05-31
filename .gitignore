@@ -108,3 +108,8 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Drupal workflow
+
+*.patch
+interdiff*.txt
