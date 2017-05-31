@@ -6,7 +6,7 @@ GitHub: https://www.github.com/WondrousLLC/obfuscate_email
 
 ## What Is This?
 
-This is a template to override the field output ot the type email. To hide your
+This is a template to override the field output of the type email. To hide your
 emails from bots, render a non readable email on the server and decrypt it via
 vanilla JS in the client. No jQuery needed. The
 [basic idea](www.grall.name/posts/1/antiSpam-emailAddressObfuscation.html)
