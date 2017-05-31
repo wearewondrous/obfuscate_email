@@ -4,5 +4,5 @@ description: 'Twig Template to obfuscate a <code>field_email</code>.'
 core: 8.x
 package: Fields
 dependencies:
-  - rot13:rot13
+  - rot13
   - drupal:field
