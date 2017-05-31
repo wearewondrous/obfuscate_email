@@ -1,14 +1,13 @@
 {
-  "name": "drupal/obfuscate_email_field",
+  "name": "drupal/obfuscate_email",
+  "description": "Obfuscate Email",
   "type": "drupal-module",
-  "description": "Obfuscate Emails",
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
-  "homepage": "https://github.com/WondrousLLC/obfuscate_email_field",
+  "homepage": "https://www.drupal.org/project/obfuscate_email/",
   "minimum-stability": "dev",
   "support": {
-    "issues": "https://github.com/WondrousLLC/obfuscate_email_field/issues",
-    "source": "https://github.com/WondrousLLC/obfuscate_email_field.git"
+    "issues": "https://www.drupal.org/project/issues/obfuscate_email/"
   },
   "require": { }
 }
