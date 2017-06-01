@@ -16,7 +16,7 @@ function obfuscate_email_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.obfuscate_email':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Twig Template to obfuscate a <code>field_email</code> code.') . '</p>';
+      $output .= '<p>' . t('Twig Template to obfuscate a <code>field_email</code>.') . '</p>';
       return $output;
 
     default:
@@ -35,4 +35,11 @@ function obfuscate_email_theme() {
   ];
 
   return $theme;
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function obfuscate_email_page_attachments_alter(&$page) {
+  $page['#attached']['library'][] = 'obfuscate_email/default';
 }
