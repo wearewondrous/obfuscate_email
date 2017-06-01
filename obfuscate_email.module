@@ -10,10 +10,10 @@ use Drupal\Core\Routing\RouteMatchInterface;
 /**
  * Implements hook_help().
  */
-function obfuscate_email_field_help($route_name, RouteMatchInterface $route_match) {
+function obfuscate_email_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
     // Main module help for the obfuscate_email_field module.
-    case 'help.page.obfuscate_email_field':
+    case 'help.page.obfuscate_email':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
       $output .= '<p>' . t('Twig Template to obfuscate a <code>field_email</code> code.') . '</p>';
@@ -26,7 +26,7 @@ function obfuscate_email_field_help($route_name, RouteMatchInterface $route_matc
 /**
  * Implements hook_theme().
  */
-function obfuscate_email_field_theme() {
+function obfuscate_email_theme() {
   $theme = [
     'field__email' => [
       'base hook' => 'field',
