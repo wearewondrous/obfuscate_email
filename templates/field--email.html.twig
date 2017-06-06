@@ -24,7 +24,7 @@
  * - label_hidden: Whether to show the field label or not.
  * - title_attributes: HTML attributes for the title.
  * - label: The label for the field.
- * - content_attributes: HTML attributes for the content.
+ * - multiple: TRUE if a field can contain multiple items.
  * - items: List of all the field items. Each item contains:
  *   - attributes: List of HTML attributes for each item.
  *   - content: The field item's content.
@@ -40,7 +40,7 @@
 {% set classes = [
     'field',
     'field--' ~ entity_type|clean_class ~ '--' ~ field_name_class,
-    'field--name-' ~ field_name_class,
+    'field--name-' ~ field_name|clean_class,
     'field--type-' ~ field_type|clean_class,
     'field--label-' ~ label_display,
     label_display == 'inline' ? 'clearfix',
@@ -56,23 +56,32 @@
   {% if not label_hidden %}
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
   {% endif %}
-  <div{{ content_attributes.addClass('field__items') }}>
-    {% for item in items %}
+  {% if multiple %}
+    <div class="field__items">
+  {% endif %}
+
+  {# Custom logic to replace email string. Adjust to taste. #}
+  {% for item in items %}
+    <div{{ item.attributes.addClass('field__item') }}>
       {% if item.content['#title'] %}
         {% set mail_string = item.content['#title']|replace({'.': '/dot/', '@': '/at/'})|rot13() %}
-        {# render when email anchor link #}
+        {# Render when email field is an anchor link. #}
         <a href="#" data-mail-to="{{ mail_string }}" target="_blank" data-replace-inner="">
           {% trans %}Email{% endtrans %}
         </a>
       {% elseif item.content['#context'].value %}
-        {# render when plain text #}
         {% set mail_string = item.content['#context'].value|replace({'.': '/dot/', '@': '/at/'})|rot13() %}
+        {# Render when field is set to plain text. #}
         <span data-mail-to="{{ mail_string }}" data-replace-inner="@email">@email</span>
       {% else %}
-        {# fallback content output #}
-        {# should not happen #}
+        {# Fallback for the content output. #}
+        {# This should not happen. #}
         {{ item.content }}
       {% endif %}
-    {% endfor %}
-  </div>
+    </div>
+  {% endfor %}
+
+  {% if multiple %}
+    </div>
+  {% endif %}
 </div>
