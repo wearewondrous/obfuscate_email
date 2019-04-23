@@ -1,3 +1,7 @@
+# DEPRECATED for removal
+
+This repository can be found on drupal.org here: https://www.drupal.org/project/obfuscate_email
+
 # Obfuscate Email for Drupal 8
 
 ## Source
