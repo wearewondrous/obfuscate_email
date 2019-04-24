@@ -4,10 +4,6 @@ This repository can be found on drupal.org here: https://www.drupal.org/project/
 
 # Obfuscate Email for Drupal 8
 
-## Source
-
-GitHub: https://www.github.com/WondrousLLC/obfuscate_email
-
 ## What is this?
 
 This module protects email addresses from spam bots, in two ways:
